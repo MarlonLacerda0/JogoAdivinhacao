@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação de Cores</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        #color-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 20px 0;
+            max-width: 600px;
+        }
+        .color-name {
+            font-size: 1rem;
+            padding: 8px 12px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            cursor: pointer;
+        }
+        .color-name:hover {
+            transform: scale(1.1);
+            background-color: #f9fafb;
+        }
+        input[type="text"] {
+            width: 80%;
+            max-width: 300px;
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"]:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #message {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        #instructions {
+            background-color: #f9f9f9; 
+            border: 1px solid #ddd;
+            border-radius: 10px; 
+            padding: 20px;
+            max-width: 600px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+            margin: 20px auto; 
+            text-align: center; 
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="instructions">
+        <h1>Adivinhe a Cor!</h1>
+        <p>
+            O computador escolheu 10 cores aleatórias de uma lista enorme de cores, elas estão listadas abaixo. <br> Dentre essas 10 cores, 
+            há uma cor escolhida, seu desafio é acertar essa cor. Digite o nome de uma cor no campo abaixo.<br> Você receberá dicas caso erre, Boa sorte!
+        </p>
+    </div>    
+    <div id="color-list"></div>
+    <input type="text" id="color-input" placeholder="Digite uma cor..." />
+    <button onclick="guessColor()">Adivinhar</button>
+    <div id="message"></div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
